@@ -8,12 +8,19 @@ const ItemLi = styled.li`
     color: ${props => props.done ? 'green': 'grey'};
     text-decoration: ${props => props.done ? 'inherit':'line-through'};
     border-color: ${props => props.done ? 'green':'grey'};
+   
+    cursor: pointer;
 
 `
 
 const ListItem = ({list, done, text, id, onClick}) => 
-       { return(
-            <ItemLi done = {done} onClick = {() => onClick(id, list)} >{text}  </ItemLi>
+       { 
+           return(
+            <ItemLi 
+                done = {done} 
+                onClick = {() => onClick({id, list})}>
+                    {text}  
+            </ItemLi>
         )}
     
 

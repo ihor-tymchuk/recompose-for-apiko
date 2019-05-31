@@ -9,6 +9,10 @@ const ListUl = styled.ul`
     margin: 5px;
     list-style: none;
     width: 60%;
+    p {
+        text-align: center;
+        color: grey;
+    }
 `
 
 const List = ({list, newlist, path, ...props}) => {
@@ -17,7 +21,8 @@ const List = ({list, newlist, path, ...props}) => {
             <Route path = {path} exact render = {() => {
                 return (
                     <ListUl>
-                        {newlist.map((item) => {
+                        
+                        {newlist.length > 0 ? newlist.map((item) => {
                         return <ListItem
                            path = {props.pathname}
                            list = {list}
@@ -26,7 +31,7 @@ const List = ({list, newlist, path, ...props}) => {
                            id = {item.id}
                            onClick = {props.onClick}
                            done = {item.done}/>
-                   })}
+                   }): <p> No entries </p>}
                   
                </ListUl>
                 )

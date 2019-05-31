@@ -11,9 +11,12 @@ const InputFild = styled.input`
 `
 
 
-const Input = ({onChange, inputValue}) => {
+const Input = ({onChange, value}) => {
     return(
-        <InputFild placeholder = "To-do" onChange = {onChange} value = {inputValue}/>
+        <InputFild 
+	        placeholder = "To-do" 
+	        onChange = {onChange} 
+	        value={value} />
     )
 }
 
